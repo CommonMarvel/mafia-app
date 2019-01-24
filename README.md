@@ -18,3 +18,19 @@ samples, guidance on mobile development, and a full API reference.
 ## Running Tests
 
 `flutter test`
+
+## Prerequisite
+* XCode (install from App Store)
+* Flutter SDK (https://www.dartlang.org/install)
+* Android Studio
+  * install flutter plugin
+
+## Setting
+* setting XCode Command Line Tool
+![](./doc/setting-xcode.png)
+* setting Flutter SDK Path
+![](./doc/setting-flutter.png)
+
+## Import Step
+![](./doc/open-project1.png)
+![](./doc/open-project2.png)
