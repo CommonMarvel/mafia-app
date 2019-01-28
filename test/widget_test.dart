@@ -13,7 +13,15 @@ import 'package:mafia_app/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(
+      StatefulBuilder(
+        builder: (BuildContext context, StateSetter setState) {
+          return MaterialApp(
+            home: MyHomePage(title: 'test title'),
+          );
+        }
+      )
+    );
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

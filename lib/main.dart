@@ -1,26 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  title: 'Mafia',
+  home: Splash(),
+  theme: ThemeData(
+    // This is the theme of your application.
+    //
+    // Try running your application with "flutter run". You'll see the
+    // application has a blue toolbar. Then, without quitting the app, try
+    // changing the primarySwatch below to Colors.green and then invoke
+    // "hot reload" (press "r" in the console where you ran "flutter run",
+    // or simply save your changes to "hot reload" in a Flutter IDE).
+    // Notice that the counter didn't reset back to zero; the application
+    // is not restarted.
+    primarySwatch: Colors.blue,
+  ),
+));
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class Splash extends StatefulWidget {
+  @override
+  _SplashState createState() => new _SplashState();
+}
+
+class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mafia',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+    return new SplashScreen(
+      seconds: 3,
+      navigateAfterSeconds: MyHomePage(title: 'Mafia Home Page'),
+      title: Text('Welcome Mafia game',
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
       ),
-      home: MyHomePage(title: 'Mafia Home Page'),
+      image: Image.asset('assets/images/splash.png', scale: 2),
+      backgroundColor: Colors.black,
+      styleTextUnderTheLoader: TextStyle(),
+      photoSize: 200,
+      loaderColor: Colors.white
     );
   }
 }
