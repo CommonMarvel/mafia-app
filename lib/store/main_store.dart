@@ -11,7 +11,7 @@ class MainStore {
   _init() {
     if (_socket == null) {
       // TODO
-      _socket = IO.io('http://localhost:3000', <String, dynamic>{
+      _socket = IO.io('http://localhost:9092', <String, dynamic>{
         'transports': ['websocket']
       });
       _socket.on('connect', (_) {
@@ -20,7 +20,7 @@ class MainStore {
     }
   }
 
-  StreamSubscription<MainStoreEvent> subscribe(void callback(event)) {
+  StreamSubscription<MainStoreEvent> subscribe(void callback(MainStoreEvent event)) {
     StreamSubscription<MainStoreEvent> subscription = _subject.listen(callback);
     _init();
     return subscription;
@@ -32,3 +32,5 @@ class MainStore {
     }
   }
 }
+
+MainStore mainStore = MainStore();
