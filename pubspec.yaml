@@ -23,6 +23,7 @@ dependencies:
   socket_io_client: ^0.9.1
   rxdart: ^0.20.0
   splashscreen: 1.2.0
+  flutter_facebook_login: ^1.2.0
 
 dev_dependencies:
   flutter_test:
