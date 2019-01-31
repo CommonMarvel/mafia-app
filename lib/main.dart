@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/i18n.dart';
 
 void main() => runApp(MaterialApp(
+  localizationsDelegates: [
+    S.delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate
+  ],
+  supportedLocales: S.delegate.supportedLocales,
+  localeResolutionCallback: S.delegate.resolution(fallback: Locale("en", "")),
   title: 'Mafia',
   home: Splash(),
   theme: ThemeData(
@@ -28,7 +37,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return new SplashScreen(
       seconds: 3,
-      navigateAfterSeconds: MyHomePage(title: 'Mafia Home Page'),
+      navigateAfterSeconds: MyHomePage(title: S.of(context).homeTitle),
       title: Text('Welcome Mafia game',
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
       ),
