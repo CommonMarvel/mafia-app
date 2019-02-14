@@ -11,7 +11,7 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text("Facebook Login"),
+        title: Text("Login"),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -33,10 +33,11 @@ class LoginPage extends StatelessWidget {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            FlatButton(onPressed: _facebookLoginController.login, child: Text("TEST"))
+            FlatButton(
+              onPressed: _facebookLoginController.login, child: Text("Facebook Login"),
+              textColor: Colors.white,
+              color: Colors.indigo,
+            )
           ],
         ),
       ),
